@@ -1,6 +1,6 @@
 # TNR Flask API
 
-A simple Flask REST API with basic user management endpoints.
+A simple Flask REST API with basic user management endpoints and TNR (Tone-to-Noise Ratio) calculation functionality.
 
 ## Setup
 
@@ -34,10 +34,15 @@ docker run -p 5000:5000 tnr-api
 
 ## API Endpoints
 
+### User Management
 - `GET /api/health` - Health check
 - `GET /api/users` - Get all users
 - `GET /api/users/<id>` - Get user by ID
 - `POST /api/users` - Create new user (requires JSON body with name and email)
+
+### TNR Analysis
+- `POST /api/tnr/calculate` - Calculate TNR from audio data
+- `POST /api/tnr/visualize` - Generate advanced visualizations for TNR analysis
 
 ## Example Usage
 
@@ -52,4 +57,6 @@ curl http://localhost:5000/api/users
 curl -X POST http://localhost:5000/api/users \
   -H "Content-Type: application/json" \
   -d '{"name": "Bob Johnson", "email": "bob@example.com"}'
+
+# See curl_examples.md for TNR analysis examples
 ```
