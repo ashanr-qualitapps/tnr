@@ -34,15 +34,10 @@ docker run -p 5000:5000 tnr-api
 
 ## API Endpoints
 
-### User Management
 - `GET /api/health` - Health check
-- `GET /api/users` - Get all users
-- `GET /api/users/<id>` - Get user by ID
-- `POST /api/users` - Create new user (requires JSON body with name and email)
 
 ### TNR Analysis
-- `POST /api/tnr/calculate` - Calculate TNR from audio data
-- `POST /api/tnr/visualize` - Generate advanced visualizations for TNR analysis
+- `POST /api/tnr/calculate_ecma_418_2 ` - Calculate TNR from audio data ECMA 418-2 compliant
 
 ## Example Usage
 
@@ -50,13 +45,3 @@ docker run -p 5000:5000 tnr-api
 # Health check
 curl http://localhost:5000/api/health
 
-# Get all users
-curl http://localhost:5000/api/users
-
-# Create a user
-curl -X POST http://localhost:5000/api/users \
-  -H "Content-Type: application/json" \
-  -d '{"name": "Bob Johnson", "email": "bob@example.com"}'
-
-# See curl_examples.md for TNR analysis examples
-```
